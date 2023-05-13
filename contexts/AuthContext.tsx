@@ -2,8 +2,6 @@ import { Usuario } from "@/services/usuarioService";
 import { FC, ReactNode, useContext,createContext,useEffect, useState } from "react";
 
 
-
-
 type LoginData = {
     email: string 
     senha: string
@@ -11,7 +9,7 @@ type LoginData = {
 
 interface AuthContextProps{
     isLogged:boolean;
-    login: (loginData: LoginData) => Promise<bigint>
+    login: (loginData: LoginData) => Promise<boolean>
     logout: () => void;
     userData: Usuario 
 }
@@ -22,7 +20,7 @@ export const useAuth = () => useContext(AuthContext)
 
 export const AuthProvider: FC<{children:ReactNode}> = ({children}) => {
     const [isLogged,setLogged] = useState(
-        JSON.parse(window.localStorage.getItem('isLogged') || 'false'),
+        JSON.parse(window.localStorage.getItem('isLogged') ||'false'),
     )
 
     const [userData,setUserData] = useState<Usuario>(
@@ -30,11 +28,11 @@ export const AuthProvider: FC<{children:ReactNode}> = ({children}) => {
     )
 
     useEffect(() => {
-        window.localStorage.getItem('userData', JSON.stringify(userData))
+        window.localStorage.setItem('userData' , JSON.stringify(userData))
     }, [userData])
 
     useEffect(() => {
-        window.localStorage.getItem('isLogged', JSON.stringify(isLogged))
+        window.localStorage.setItem('isLogged', JSON.stringify(isLogged))
     }, [isLogged])
 
 
@@ -52,7 +50,6 @@ export const AuthProvider: FC<{children:ReactNode}> = ({children}) => {
         })
     }
 
-
     const logout = () => {
         setLogged(false)
     }
@@ -62,7 +59,5 @@ export const AuthProvider: FC<{children:ReactNode}> = ({children}) => {
             {children}
         </AuthContext.Provider>
     )
-
-
 }
 
