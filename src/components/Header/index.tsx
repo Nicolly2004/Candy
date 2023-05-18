@@ -41,14 +41,14 @@ export const Header : FC<HeaderProps> = ({isOpen, onToggle}) => {
      href="/cadastro"
      variant="link"
      colorScheme="red">
-        Cadastre-se e receba nossos descontos!!!
+         Quero me cadastrar 
      </Button>
 
      <Button
      as={Link}
      href="/login"
      colorScheme="black">
-        Entre e confira nossas promoções!!!
+        Entrar
      </Button>
 
 

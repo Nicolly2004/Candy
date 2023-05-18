@@ -1,7 +1,7 @@
 'use client'
 
 import { Button, Flex, Heading,Text } from '@chakra-ui/react';
-import { Input } from '@components/Input'
+import { Input } from '@/components/Input'
 import { Link } from '@chakra-ui/next-js'
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -63,12 +63,13 @@ export default function Cadastro() {
             <Flex
             as="main"
            backgroundImage="/fundotextura.jpg"
-            color="white"
-            minW="40vw"
+            color="black"
+            minW="70vw"
+            textAlign="center"
             padding={6}
             borderRadius="12px"
             direction="column"
-            boxShadow="10px 10px 15px rgba(255, 228, 196, 1)"
+            boxShadow="10px 10px 15px rgba(220, 20, 60, 1)"
             >
         <Heading fontSize="2rem" color="pink.700">Cadastre-se</Heading>
         <Flex
@@ -100,7 +101,7 @@ export default function Cadastro() {
         />
 
         <Input
-        labeç="senha"
+        label="senha"
         id="senha"
         type="password"
         {...register('senha')}
@@ -115,15 +116,24 @@ export default function Cadastro() {
         error={errors.confirmaSenha}
         />
 
-        <Button type="submit" isLoading={isSubmitting} colorScheme='pink.300'>
+        <Button 
+        type="submit"
+        fontFamily="fantasy"
+      isLoading={isSubmitting}
+       color='black'
+       maxW="300px"
+       textAlign="center"
+       borderRadius="7px">
             Quero me Cadastrar!!!
         </Button>
         </Flex>
 
         <Flex as="footer" borderTop="1px solid rgba(165, 42, 42, 1)" mt={4} pt={4}>
-            <Text>
+            <Text 
+            textAlign="center"
+            >
             Já possui uma conta com a gente? {' '}
-            <Link href="/login" fontWeight={400} color="blue.200">
+            <Link href="/login" fontWeight={400} color="purple.200">
                 Acesse-a
             </Link>
             </Text>

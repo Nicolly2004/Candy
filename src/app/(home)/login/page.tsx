@@ -4,10 +4,8 @@ import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
 import { Input } from '../../../components/Input'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { useAuth } from '@/contexts/AuthContext'
-import { Button, Flex, Heading, IconButton, useDisclosure,Text } from '@chakra-ui/react';
+import { Button, Flex, Heading, IconButton, useDisclosure,Text,Link } from '@chakra-ui/react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
-import Link from '@chakra-ui/react'
 
 
 
