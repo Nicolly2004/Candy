@@ -11,7 +11,7 @@ interface AuthLayoutProps{
 export default function AuthLayout({ children } : AuthLayoutProps) {
     return (
     <Flex
-    bg="blue.300"
+    bg="pink.50"
     minH="100vh"
     minW="100vw"
     align="center"

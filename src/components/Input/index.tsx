@@ -25,6 +25,7 @@ const InputBase = ({ id,type,label,error,...resto}: InputBaseProps,ref:any) => {
                 {label}
                 </FormLabel>
                 <ChakraInput
+                type={type}
                 id={id}
                 {...resto}
                 ref={ref}

@@ -6,7 +6,7 @@ import { CacheProvider } from '@chakra-ui/next-js'
 import { AuthProvider } from '@/contexts/AuthContext'
 import { CartProvider } from '@/contexts/CartContext'
 import { ReactNode, FC} from 'react'
-import { tema } from '../../config/tema'
+import { tema } from '../config/tema'
 
 
 

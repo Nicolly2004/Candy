@@ -13,6 +13,9 @@ export interface Loja{
     taxaEntrega: number 
 }
 
+
+
+
 export const listarLojas = () => {
     return [
         {

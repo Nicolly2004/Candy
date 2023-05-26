@@ -1,11 +1,12 @@
 'use client'
 
-import { Button, Flex, Heading,Text } from '@chakra-ui/react';
+import { Button, Flex, Heading,IconButton,Text, useDisclosure } from '@chakra-ui/react';
 import { Input } from '@/components/Input'
 import { Link } from '@chakra-ui/next-js'
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from 'react-hook-form';
+import { FaEye,FaEyeSlash } from 'react-icons/fa';
 
 
 const validaCadastro = yup.object().shape({
@@ -64,7 +65,7 @@ export default function Cadastro() {
             as="main"
            backgroundImage="/fundotextura.jpg"
             color="black"
-            minW="70vw"
+            minW="40vw"
             textAlign="center"
             padding={6}
             borderRadius="12px"
@@ -75,10 +76,11 @@ export default function Cadastro() {
         <Flex
         as="form"
         direction="column"
+        align="center"
         gap={4}
         mt={2}
         pt={2}
-        borderTop="1px solid rgba(165, 42, 42, 1)"
+        borderTop="2px solid rgba(165, 42, 42, 1)"
         onSubmit={handleSubmit(cadastraUsuario)}
         >
     
@@ -92,7 +94,7 @@ export default function Cadastro() {
        />
 
        <Input
-       label="email"
+       label="E-mail"
        id="email"
        type="text"
        placeholder="email@dominio.com.br"
@@ -101,39 +103,41 @@ export default function Cadastro() {
         />
 
         <Input
-        label="senha"
+        label="Senha"
         id="senha"
         type="password"
+        placeholder="********"
         {...register('senha')}
         error={errors.senha}  
         />
+    
 
         <Input
         label="Confirme sua senha"
         id="conforme-senha"
         type="password"
+        placeholder="********"
         {...register('confirmaSenha')}
         error={errors.confirmaSenha}
         />
 
         <Button 
         type="submit"
-        fontFamily="fantasy"
-      isLoading={isSubmitting}
-       color='black'
-       maxW="300px"
-       textAlign="center"
-       borderRadius="7px">
+        fontFamily="sans-serif"
+        isLoading={isSubmitting}
+        color='black'
+        maxW="300px"
+        bg="pink.700"
+        borderRadius="7px">
             Quero me Cadastrar!!!
         </Button>
         </Flex>
 
-        <Flex as="footer" borderTop="1px solid rgba(165, 42, 42, 1)" mt={4} pt={4}>
+        <Flex as="footer" borderTop="1px solid rgba(165, 42, 42, 1)" mt={4} pt={4}  align="center" justify="center"  fontFamily="sans-serif">
             <Text 
-            textAlign="center"
             >
             Já possui uma conta com a gente? {' '}
-            <Link href="/login" fontWeight={400} color="purple.200">
+            <Link href="/login" fontWeight={600} color="purple.700" fontFamily="sans-serif">
                 Acesse-a
             </Link>
             </Text>

@@ -19,7 +19,7 @@ export function getProdutos(): Produto[] {
         nome: 'Chocolate Ao Leite ',
         preco:52.84,
         descricao:'Chocolate ao leite em barra de 1K, Nestlé',
-        imagem:,
+        imagem:Choc ao leite barra 1k.webp,
         loja: {
 
             id: '1',
@@ -44,7 +44,7 @@ export function getProdutos(): Produto[] {
             id: '3',
             nome: 'Chocolate Ao leite',
             preco: 35.90,
-            descricao: 'Chocolate ao leite em Gotas - 500g, Hersheys',
+            descricao: 'Chocolate ao leite em Gotas - 2k, Hersheys',
             imagem:,
         },
 
@@ -94,8 +94,8 @@ export function getProdutos(): Produto[] {
             nome: 'Chocolate Meio-Amargo',
             preco: 47.19,
             descricao: 'Chocolate branco em gotas - 1K, Hersheys',
-            imagem:
-        }
+            imagem:,
+        },
         
   
  ]
