@@ -1,105 +1,55 @@
 
 
-export interface Loja{
-    id:string 
+
+export interface Loja {
+    id:string
     nome: string
+    nota: number
     categoria: string
-    imagemCover: string 
-    imagemLogo: string
-    distancia: string
-    nota: number 
-    tempo: number
-    pedidoMinimo:number
-    taxaEntrega: number 
+      
+    imageLogo: string
+    imageCover: string
 }
-
-
-
 
 export const listarLojas = () => {
     return [
         {
-            id: '1',
-            nome: 'Chocolateria Bom Preço',
-            categoria: 'Chocolates',
-            imagemCover:  'chocolateria.png',
-            imagemLogo: 'chocolateria.png',
-            distancia: '2,0 km',
-            nota: 5 ,
-            tempo: '40 min',
-            pedidoMinimo: 70,
-            taxaEntrega: 10,
-
+        id: '1',
+        nome: 'Pic Nic artigos de festa',
+        nota: 5.0,
+        categoria: 'artigo de festa',          
+        imageLogo: '/picnic.png',
+        imageCover: 'https://picsum.photos/1200/250',
         },
-
         {
-            id: '2',
-            nome: 'Cubic Cut',
-            categoria: 'Cookies',
-            imagemCover:  'cookie.png',
-            imagemLogo: 'cookie.png',
-            distancia: '1,5 km',
-            nota:   4.5,
-            tempo: '20 min',
-            pedidoMinimo: 30,
-            taxaEntrega: 7,
-
+        id: '2',
+        nome: 'Tutto Dolce',
+        nota: 5.0,
+        categoria: 'doce', 
+        imageLogo: '/tutto.png',
+        imageCover: 'https://picsum.photos/1200/250',
         },
-
         {
-            id: '3',
-            nome: 'Beco do Brownie',
-            categoria: 'Brownie',
-            imagemCover: 'brownie.png', 
-            imagemLogo: 'brownie.png',
-            distancia: '1 km',
-            nota:  5,
-            tempo: 20,
-            pedidoMinimo: 30,
-            taxaEntrega:  5,
-
+        id: '3',
+        nome: 'Cookie ',
+        nota: 4.7,
+        categoria: 'cookie ',
+        imageLogo: '/cookie.png',
+        imageCover: 'https://picsum.photos/1200/250',
         },
-
         {
-            id: '4',
-            nome: 'PicNic Festas & Eventos',
-            categoria: 'Festas',
-            imagemCover:  'PicNick.pgn',
-            imagemLogo:  'PicNick.pgn',
-            distancia: '1 km',
-            nota:  5,
-            tempo: '50 min',
-            pedidoMinimo: 100,
-            taxaEntrega: 15,
-
+        id: '4',
+        nome: 'Fare la Festa',
+        nota: 4.9,
+        categoria: 'doces personalizados',
+        imageLogo: '/fare.png',
+        imageCover: 'https://picsum.photos/1200/250',
         },
+        ]
+        
+        
+}
 
-        {
-            id: '5',
-            nome: 'Tutto Dolce',
-            categoria: 'Doces no Pote',
-            imagemCover:  'tutto.png',
-            imagemLogo: 'tutto.png',
-            distancia: '1,5 km',
-            nota:  5,
-            tempo: '35 min',
-            pedidoMinimo: 30,
-            taxaEntrega: 7,
-
-        },
-
-        {
-            id: '6',
-            nome: 'Fare la Festa',
-            categoria: 'Doces de festa personalizados',
-            imagemCover:  'fare.png',
-            imagemLogo:  'fare.png',
-            distancia: '3 km',
-            nota:  5,
-            tempo: '1h',
-            pedidoMinimo: 250,
-            taxaEntrega: 20,
-
-        }
-    ]
+export const obterLoja = (id: string) => {
+    return listarLojas().find((loja) => loja.id === id)
 }

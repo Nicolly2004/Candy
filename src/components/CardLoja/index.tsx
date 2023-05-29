@@ -16,17 +16,14 @@ interface CardLojaProps {
 
 
 export const CardLoja: FC<CardLojaProps> = ({
-    path,
-    loja: {
-        nome,
+  path,
+    loja: {nome,
         nota,
         tempo,
         taxaEntrega,
         categoria,
         distancia,
-
-}) => {
-       
+}}) => {
       const moneyFormatter = new Intl.NumberFormat('pt-br', {
         style: 'currency',
         currency: 'BRL'
@@ -100,5 +97,4 @@ export const CardLoja: FC<CardLojaProps> = ({
        </Flex>
      </Flex>
        )
-
 }

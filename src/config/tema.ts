@@ -16,7 +16,7 @@ export const tema = extendTheme({
             800: "#1A202C",
             900: "#171923",
           },
-    },
+  
     blue: {
         50: "#ebf8ff",
         100: "#bee3f8",
@@ -54,4 +54,5 @@ export const tema = extendTheme({
         800: "#702459",
         900: "#521B41",
       },
+}
 })

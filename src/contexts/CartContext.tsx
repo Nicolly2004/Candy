@@ -40,7 +40,7 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
             if (!produto) {
                 return false
             }
-            return produtos.id === id
+            return produto.id === id
         })
     }
 
@@ -83,7 +83,7 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
 
         if (!produto) return
 
-        const produtoIndex = produto.indexOf(produto)
+        const produtoIndex = produtos.indexOf(produto)
 
         if (produtoIndex < 0) return
 

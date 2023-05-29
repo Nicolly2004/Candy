@@ -1,23 +1,26 @@
 'use client'
 
-import { Flex } from '@chakra-ui/react'
-import { ReactNode } from 'react'
+import { Footer } from "@/components/Footer"
+import { Header } from "@/components/Header"
+import { Flex, useDisclosure } from "@chakra-ui/react"
+import { ReactNode } from "react"
 
 
-interface AuthLayoutProps{
-    children:ReactNode
+
+interface HomeLayoutProps {
+    children: ReactNode
 }
 
-export default function AuthLayout({ children } : AuthLayoutProps) {
-    return (
-    <Flex
-    bg="pink.50"
-    minH="100vh"
-    minW="100vw"
-    align="center"
-    justify="center"
-    >
-        {children}
-    </Flex>
+export default function HomeLayout({children}: HomeLayoutProps) {
+    const {isOpen, onToggle} = useDisclosure()
+    return(
+        <Flex direction="column">
+            <Header isOpen={isOpen} onToggle={onToggle} />
+             <Flex mt="130px" pt="-130px" minH="calc(100vh - 130px)">
+                {children}
+             </Flex>
+             <Footer/>
+        </Flex>
     )
 }
+
