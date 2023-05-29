@@ -1,5 +1,5 @@
 'use client'
-import { Loja, apagaLoja, atualizaLoja, cadastraLoja, listarLojas } from "@/services/lojaService";
+import { Loja, listarLojas } from "@/services/lojaService";
 import { Text,Button, Flex, FormControl, FormLabel, Heading, IconButton, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Table, Tbody, Td, Th, Thead, Tr, useDisclosure, Image, FormErrorMessage,Spinner } from "@chakra-ui/react";
 import { FaPencilAlt, FaTrash } from "react-icons/fa";
 import { Input } from '@/components/Input'

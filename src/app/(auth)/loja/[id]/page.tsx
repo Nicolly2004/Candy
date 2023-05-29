@@ -1,3 +1,4 @@
+'use client'
 import { CardProduto } from "@/components/CardProduto"
 import { CardProdutoHorizontal } from "@/components/CardProdutoHorizontal"
 import { ModalProduto } from "@/components/ModalProduto"
