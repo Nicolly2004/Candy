@@ -2,7 +2,7 @@
 
 import { useCart } from "@/contexts/CartContext"
 import { formataMoeda } from "@/helpers/formataMoeda"
-import { obterUsuario } from "@/services/usuarioService"
+import { obterUsuario, obterUsuarios } from "@/services/usuarioService"
 import { Button, Divider, Flex, Heading, Text,Tab,TabList,TabPanel,TabPanels,Tabs } from "@chakra-ui/react"
 import { redirect } from "next/navigation"
 import { useEffect, useState } from "react"
@@ -13,7 +13,7 @@ import { Input } from '@/components/Input'
 
 export default function PagamentoPage() {
     const {produtos, valor} = useCart()
-    const usuario = obterUsuario('1')
+    const usuario = obterUsuarios('1')
     const [freteTaxa,setFreteTaxa] = useState(0)
     const {register, watch, handleSubmit} = useForm();
 
@@ -138,13 +138,14 @@ export default function PagamentoPage() {
             <Tab>Cartão de Crédito</Tab>
             <Tab>Pix</Tab>
         </TabList>
+
         <TabPanels>
     <TabPanel>
 
         <Flex
+        as="form" 
          align="center" 
          direction="column" 
-         as="form" 
          onSubmit={handleSubmit(finalizarCompra)}
          grow={1}
          >
@@ -156,12 +157,15 @@ export default function PagamentoPage() {
         px={4} 
         py={8}
         boxShadow="10px 10px 15px rgba(220, 20, 60, 1)" >
+
         <Input id="cardNumber" label= "Número do cartão" type="number" {...register('cartaoNome')} />
+
         <Input
         id="cardNome"
         label="Nome Impresso no cartão"
         type="text"
         />
+        
         <Flex gap={3}>
             <Input id="validade" label="Validade" type="text" {...register('cartaoValidade')}/>
             <Input id="cvv" label="CVV"  type="number" {...register('cvv')}/>
@@ -199,9 +203,8 @@ export default function PagamentoPage() {
     <TabPanel>Informações do Pix</TabPanel>
         </TabPanels>
     </Tabs>
-                </Flex>
         </Flex>
-
-                </Flex> 
+        </Flex>
+        </Flex> 
     )
 }

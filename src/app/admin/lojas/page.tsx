@@ -7,12 +7,9 @@ import * as yup from 'yup'
 import { yupResolver } from "@hookform/resolvers/yup";
 import {useForm} from 'react-hook-form'
 import { AdminHeader } from "../components/AdminHeader";
-import { getBase64 } from '../../../helpers/getBase64'
 import { formataMoeda } from "@/helpers/formataMoeda";
-import { notify } from "@/config/toast";
 import { useQuery ,useQueryClient } from "react-query";
 import { useState } from "react";
-import { ConfirmDelete } from "../components/ConfirmDelete";
 import { FormLoja } from "./FormLoja";
 
 

@@ -12,21 +12,22 @@ export const Footer: FC = () => {
         as="footer"
         padding={4}
         gap={3}
+        height="200px"
+        flexDirection="column"
         justify="space-between"
         align="center"
-        borderTop="2px solid rgba(165, 42, 42, 1)"
+        borderTop="3px solid rgba(147,112,219)"
         marginX={4}
         marginTop={16}
         >
     
-      <Flex direction="column">
-        <Heading fontSize="1.5rem">Nr_Candy</Heading>
+      <Flex direction="column" color="purple">
         <Text>&copy: Nr_Candy 2023 - Todos os direitos Reservados.</Text>
       </Flex>
 
-     <Flex direction="column">
-        <Heading fontSize="1rem">Redes de Contato</Heading>
-        <Flex gap={3}>
+     <Flex direction="column" align="center">
+        <Heading fontSize="1rem" color="blue.400">Redes de Contato</Heading>
+        <Flex gap={3} mt={4} color="pink.400">
             <Link href="https://instagram.com" target="blanck">
                 <FaInstagram/>
             </Link>
@@ -36,18 +37,10 @@ export const Footer: FC = () => {
             <Link href="https://www.youtube.com" target="blank">
                 <FaYoutube/>
             </Link>
-            
-            <Flex>
-            <Text>Números para contato</Text>
-
-               <Text>(11) 96352-9854
+            <Link href="https://www.whatsapp.com" target="blank">
                 <FaWhatsapp/>
-               </Text>
+            </Link>
 
-               <Text>(11) 92146-3040
-                <FaWhatsapp/>
-               </Text>
-            </Flex>
             </Flex>    
              </Flex>
 

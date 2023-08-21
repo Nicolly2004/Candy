@@ -12,6 +12,12 @@ import { StarRating } from '../StarRating'
 interface CardLojaProps {
     loja: Loja
     path: string
+    nota: number
+    tempo: string
+    taxaEntrega: number
+    categoria: string 
+    distancia: string
+    logo?: string
 }
 
 
@@ -40,10 +46,10 @@ export const CardLoja: FC<CardLojaProps> = ({
         justify="space-between"
         _hover = {{
             transform: 'scale(1.02)',
-            boxShadow: '10px 10px 15px rgba(220, 20, 60, 1)',
+            boxShadow: '10px 10px 15px rgba(200, 162, 200)',
             textDecoration: 'none'
          }}
-         transition="all 0.2s"
+         transition="all 0.4s"
          >
 
          <Flex 
@@ -55,7 +61,7 @@ export const CardLoja: FC<CardLojaProps> = ({
         height="100px"
         width="100px"
         objectFit="cover"
-           src="/Logo.png"
+           src="/fare.png"
            alt={`Logotipo da Loja ${nome}`}
            borderRadius="full"
            />

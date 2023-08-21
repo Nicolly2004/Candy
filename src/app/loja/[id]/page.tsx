@@ -12,12 +12,9 @@ import { AiFillDollarCircle } from "react-icons/ai"
 
 
 
-
-
-
 type LojaPros = {
     params: {
-        id: string
+    id: string
     }
 }
 
@@ -38,16 +35,21 @@ export default  function Loja({params:{id}}: LojaPros) {
     }
 
     const produtos = getProdutos()
-
+ 
+    const moneyFormatter = new Intl.NumberFormat('pt-br', {
+        style: 'currency',
+        currency: 'BRL',
+    })
 
     return (
         <Flex
         w="95vw"
         minH="100vh"
         marginX="2.5vw"
+        bg="pink.100"
         direction="column"
         align="center"
-        justify="flex-end"
+        justify="flex-start"
         mt={2}
         overflow="hidden"
         >
@@ -58,16 +60,19 @@ export default  function Loja({params:{id}}: LojaPros) {
                  borderRadius="10px"
                  />
 
-                 <Flex align="center" gap={4} mt={2}>
+                 <Flex align="center" gap={4} mt={2} >
                     <Image
+                    h="300px"
+                    w="300px"
+                    border="3px solid black"
                     src={dadosLoja.imageLogo}
                     alt={"Logo da empresa: " + dadosLoja.nome}
                     borderRadius="full"
                     />
-                    <Heading fontSize="1.7rem">{dadosLoja.nome}</Heading>
+                    <Heading fontSize="1.5rem">{dadosLoja.nome}</Heading>
                     <StarRating nota={dadosLoja.nota} />
-                    <Flex ml="alto" gap={5}>
-                        <Button variant="link" colorScheme="pink">
+                    <Flex ml="auto" gap={5} >
+                        <Button variant="link" colorScheme="pink" >
                             Ver Mais
                         </Button>
 
@@ -79,17 +84,17 @@ export default  function Loja({params:{id}}: LojaPros) {
                         justifyContent="center"
                         gap="3px"
                         >
-                         <Icon as={AiFillDollarCircle} />
-                            Pedido Mínimo {dadosLoja.pedidoMinimo}
+                         <Icon as={AiFillDollarCircle} direction="column"/>
+                            Pedido Mínimo {moneyFormatter.format(dadosLoja.pedidoMinimo)}
                         </Text>
                     </Flex>
                  </Flex>
 
-                 <Flex as="section" direction="column" grow={1} maxW="120px" mt={2}>
-                    <Heading fontSize="1rem">Destaques</Heading>
+                 <Flex as="section" direction="column" grow={1} maxW="1200px" mt={2} gap={12}>
+                    <Heading fontSize="2rem" color="orange.400">Destaques</Heading>
                     <Divider/>
 
-                    <Flex wrap="wrap" gap={6} mt={2}>
+                    <Flex direction = {{base: 'column', md: 'row'}} wrap="wrap" gap={6} mt={2} p={1}>
                         {produtos.map((produtos) => (
                             <CardProduto
                             handleOpenModal={handleOpenModal}
@@ -98,31 +103,7 @@ export default  function Loja({params:{id}}: LojaPros) {
                     </Flex>
                  </Flex>
 
-                 <Flex
-                 as="section"
-                 direction="column"
-                 grow={1}
-                 mt={2}
-                 maxH="1200px"
-                 >
-
-                    <Heading fontSize="1rem">Produtos</Heading>
-                    <Divider/>
-
-                    <Flex
-                    direction={{base: 'column', md: 'row'}}
-                    gap={4}
-                    wrap="wrap"
-                    mt={2}
-                    p={1}
-                    >
-                        {produtos.map((produto) =>(
-                            <CardProdutoHorizontal
-                            handleOpenModal={handleOpenModal}
-                            produto={produto} key={produto.id}/>
-                        ))}
-                    </Flex>
-                 </Flex>
+                 
                  <ModalProduto isOpen={isOpen} onClose={onClose} id={addId} />
             </Flex>
         </Flex>

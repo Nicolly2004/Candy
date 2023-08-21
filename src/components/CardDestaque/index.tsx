@@ -67,7 +67,8 @@ export const CardDestaque: FC<CardDestaqueProps> = ({
 
             <Button
             variant="solid"
-            colorScheme="whiteAlpha"
+            colorScheme="gray"
+            color="black"
             rightIcon={ <AiOutlineRight />}
             margin={4}
             >
@@ -75,8 +76,10 @@ export const CardDestaque: FC<CardDestaqueProps> = ({
             </Button>
 
            <Image 
-           src="/marsh.png"
+           src="/doces.jpeg"
            alt="Imagem do card" 
+           borderRadius="10px"
+           border="3px solid white"
            maxH="150px"/>
 
             </Flex>

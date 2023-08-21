@@ -61,19 +61,19 @@ const buscaCep = async (cep: string) => {
 }
 
     return (
-        <Flex align="center" gap={4} as="main" direction="column" grow={1}>
-            <Flex as="form" direction="column" gap={5} grow={1}>
-                <Accordion minH="500px" allowToggle allowMultiple>
+        <Flex align="center" gap={4} as="main" direction="column" grow={1} bg="gray.50">
+            <Flex as="form" direction="column" gap={8} grow={1}>
+                <Accordion minH="800px" allowToggle allowMultiple>
                     <AccordionItem>
                         <AccordionButton>
-                            <Text flex={1}>Informações Pessoais</Text>
+                            <Text flex={1} color="pink.700">Informações Pessoais</Text>
                             <AccordionIcon/>
                             </AccordionButton>
                             <AccordionPanel>
                                 <Flex
                                 direction="column"
-                                borderRadius="10px"
-                                boxShadow="10px 10px 15px rgba(220, 20, 60, 1)"
+                                borderRadius="5px"
+                                boxShadow="10px 10px 15px rgba(0, 127, 255)"
                                 p={4}
                                 >
                                     <Input label='Nome' id="nome" type='text' {...register('user.nome')}/>
@@ -84,15 +84,15 @@ const buscaCep = async (cep: string) => {
 
                   <AccordionItem>
                     <AccordionButton>
-                        <Text flex={1}>Alterar a Senha</Text>
+                        <Text flex={1} color="pink.700">Alterar a Senha</Text>
                         <AccordionIcon/>
                     </AccordionButton>
                     
                     <AccordionPanel>
                         <Flex
                         direction="column"
-                        borderRadius="10px"
-                        boxShadow="10px 10px 15px rgba(220, 20, 60, 1)"
+                        borderRadius="5px"
+                        boxShadow="10px 10px 15px rgba(255, 0, 255)"
                         p={4}
                         >
                             <Input label="Senha Antiga" id="senha-antiga" type="password"/>
@@ -106,17 +106,17 @@ const buscaCep = async (cep: string) => {
 
                  <AccordionItem>
                     <AccordionButton>
-                        <Text flex={1}>Endereço</Text>
+                        <Text flex={1} color="pink.700">Endereço</Text>
                         <AccordionIcon/>
                     </AccordionButton>
 
                     <AccordionPanel>
                         <Flex
                          direction="column"
-                         borderRadius="10px"
-                         boxShadow="10px 10px 15px rgba(220, 20, 60, 1)"
+                         borderRadius="5px"
+                         boxShadow="10px 10px 15px rgba(139, 0, 139)"
                          p={4}
-                         gap={2}
+                         gap={8}
                          >
                             <Input
                             label="CEP"
@@ -157,7 +157,7 @@ const buscaCep = async (cep: string) => {
                             {...register("endereco.cidade")}
                             />
 
-<Input
+                            <Input
                             label="UF"
                             id="uf"
                             type="text"
@@ -173,16 +173,18 @@ const buscaCep = async (cep: string) => {
                             {...register("endereco.complemento")}
                             />
 
+
+                 <Button
+                type="submit"
+                leftIcon={<Icon as={FaSave} />} color='pink.700' bg="blue.100">
+                    Salvar
+                </Button>
                          </Flex>
                     </AccordionPanel>
                  </AccordionItem>
                 </Accordion>
 
-                <Button
-                type="submit"
-                leftIcon={<Icon as={FaSave} />} colorScheme='pink.700'>
-                    Salvar
-                </Button>
+        
             </Flex>
         </Flex>
     )

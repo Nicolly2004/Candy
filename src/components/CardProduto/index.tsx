@@ -6,6 +6,7 @@ import { useCart } from "@/contexts/CartContext"
 
 
 export interface CardProdutoProps {
+    descricao: string
     produto: Produto
     handleOpenModal: (id:string) => void 
 }
@@ -22,10 +23,12 @@ export const CardProduto: FC<CardProdutoProps> = ({
         maxW="sm"
         onClick={() => handleOpenModal(id)}
         _hover = {{ transform: 'scale(1.01)'}}
-        transition="all 0.2s">
+        transition="all 0.4s">
  
         <CardBody padding={0}>
             <Image
+            h="200px"
+            w="500px"
             src={imagem}
             alt={'Imagem do produto' + nome}
             />

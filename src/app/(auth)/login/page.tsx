@@ -117,7 +117,7 @@ export default function Login() {
 
             <Flex
                 as="footer"
-                borderTop="1px solid rgba(165, 42, 42, 1)"
+                borderTop="2px solid rgba(165, 42, 42, 1)"
                 mt={4}
                 pt={4}
                 color="black"

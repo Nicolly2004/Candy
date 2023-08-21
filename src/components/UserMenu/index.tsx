@@ -16,26 +16,20 @@ export const UserMenu :FC = () => {
                 aria-label="Informações do Usuário"
                 icon={<FaUserAlt />}
                 />
-                <MenuList>
-                    <MenuItem as={Link} href="/perfil" icon={ <FaUserCog />} >
-                        Perfil
-                        {('Administrador') && (
-                            <MenuItem as={Link} href="/admin" icon={<FaCog />} >
-                                Painel de ADM
-                            </MenuItem>
-                        )}
-                     <MenuItem
-                     as={Button}
-                     onClick={() => {
-                        logout()
-                        redirect('/')
-                     }}
-                     color="red.500"
-                     icon={<FaDoorOpen />} >
-                        Sair
-                     </MenuItem>
+                    <MenuList>
+                        <MenuItem as={Link} href="/perfil"  color="pink.700" icon={ <FaUserCog />} >
+                            Perfil
+                        </MenuItem>
 
-                    </MenuItem>
+                        <MenuItem as={Link} href="/admin" color="blue.500" icon={<FaCog />} >
+                            Painel de ADM
+                        </MenuItem>
+        
+                        <MenuItem as={Button} color="purple.500" icon={<FaDoorOpen />} >
+                            Sair
+                        </MenuItem>
+
+                   
                 </MenuList>
             </Menu>
         )

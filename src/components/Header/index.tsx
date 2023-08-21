@@ -3,6 +3,9 @@ import {Link} from "@chakra-ui/next-js"
 import { FC } from "react"
 import { MenuToggle } from "../MenuToggle"
 import { Menu } from '../Menu'
+import { useAuth } from "@/contexts/AuthContext"
+import { UserMenu } from "../UserMenu"
+import { CheckoutButton } from "../CheckoutButton"
 
 
 
@@ -13,13 +16,14 @@ interface HeaderProps{
 }
 
 export const Header : FC<HeaderProps> = ({isOpen, onToggle}) => {
+    const {isLogged} = useAuth()
     return (
         <Flex
         gap="6px"
         w="100%"
         wrap="wrap"
         justify="space-between"
-        paddingX={9}
+        paddingX={9} 
         paddingY={10}
         align="center"
         transition="all 0.5s"
@@ -33,26 +37,39 @@ export const Header : FC<HeaderProps> = ({isOpen, onToggle}) => {
      <Link href="/">
         <Heading fontSize={['15px', '2rem']}>Nr_Candy</Heading>
      </Link>
-     <Menu isOpen={isOpen}/>
-     <Flex gap="6" display={{base: isOpen? 'flex': 'none', md: 'flex'}}>
 
+
+     <Menu isOpen={isOpen}/>
+
+     {isLogged ? (
+        <Flex gap="6" display={{base: isOpen? 'flex': 'none', md: 'flex'}}>
+         <UserMenu/>
+         <CheckoutButton/>
+         </Flex>
+     ) : (
+    
+    <Flex gap="6" display={{base: isOpen? 'flex': 'none', md: 'flex'}}>
      <Button
      as={Link}
      href="/cadastro"
      variant="link"
-     colorScheme="red">
+     color="blue.400"
+     >
          Quero me cadastrar 
      </Button>
 
      <Button
      as={Link}
      href="/login"
-     colorScheme="black">
+     color="purple.200"
+     colorScheme="blue">
         Entrar
      </Button>
-
-
      </Flex>
-        </Flex>
-    )
+     
+
+     ) }
+    
+     </Flex>
+     )
 }

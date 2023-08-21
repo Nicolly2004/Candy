@@ -1,8 +1,7 @@
 'use client'
 
 import { Produto } from "@/services/produtoService";
-import { useConst } from "@chakra-ui/react";
-import { FC, ReactNode, createContext,useEffect, useState } from "react";
+import { FC, ReactNode, createContext,useContext,useEffect, useState } from "react";
 
 
 
@@ -16,6 +15,7 @@ interface CartContextData{
     valor:number;
     addToCart: (item: ProdutoProps) => void
     removeToCart: (id:any) => void
+    removeFromCart: (id: any) => void
 }
 
 interface CartProviderProps{
@@ -69,11 +69,11 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
 
        useEffect(() =>{
         setValor(
-            produtos.reduce((ValorAnterior,produto) => {
+            produtos.reduce((valorAnterior,produto) => {
             if (!produto ) {
-                return ValorAnterior
+                return valorAnterior
             }
-            return ValorAnterior + produto.preco * produto.quantidade
+            return valorAnterior + produto.preco * produto.quantidade
        },0),
         )
        },[produtos])
@@ -109,4 +109,4 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
     
 }
 
-export const useCart = () => useConst(CartContext)
+export const useCart = () => useContext(CartContext)

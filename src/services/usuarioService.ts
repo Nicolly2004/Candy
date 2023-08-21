@@ -1,4 +1,3 @@
-import { apiClient } from "@/config/axios"
 
 
 
@@ -17,7 +16,6 @@ export interface Usuario{
     nome: string 
     email: string
     endereco?: Endereco
-    permissions?: string[]
 }
 
 interface CreateUserForm{
@@ -27,10 +25,6 @@ interface CreateUserForm{
     confirmaSenha:string;
 }
 
-interface CreateUserResponse {
-    id:string
-    message:string
-}
 
 export const obterUsuario = (): Usuario[] => {
     return [
@@ -47,6 +41,7 @@ export const obterUsuario = (): Usuario[] => {
                 estado: 'SP',
                 cep: '47851-30'
             },
+            
         },
     ]}
 
@@ -54,15 +49,4 @@ export const obterUsuario = (): Usuario[] => {
     export const obterUsuarios = (id: string): Usuario | undefined  => {
         return obterUsuario().find((usuario) => usuario.id === id)
     }
-    export const createUser = (userForm: CreateUserForm) => {
-        return apiClient.post<CreateUserResponse>('/register', userForm);
-    }
     
-    interface LoginResponse{
-        message: string
-        token: string
-    }
-    
-    export const createLogin = <T> (userLogin: T) => {
-        return apiClient.post<LoginResponse>('/login',userLogin)
-    }

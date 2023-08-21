@@ -1,3 +1,5 @@
+'use client'
+
 import { Footer } from "@/components/Footer";
 import { HeaderUser } from "@/components/HeaderUser";
 import { Flex } from "@chakra-ui/react";

@@ -8,7 +8,7 @@
             PopoverContent, 
             PopoverHeader, 
             PopoverTrigger,
-            Stack,
+            HStack,
             StackItem,
             Text,
             Image,
@@ -48,11 +48,11 @@ export const CheckoutButton: FC = () => {
                 <PopoverArrow/>
                 <PopoverHeader>Seus Itens</PopoverHeader>
                 <PopoverBody>
-                    <Stack>
-                          {produtos.map((produto,i) => {
+                    <HStack  gap={5}>
+                          {produtos?.map((produto,i) => {
                             if (!produto) return null
                                return (
-                                <StackItem key={i}>
+                                <StackItem key={i} >
                                     <Flex gap={3} align="center">
                                         <Image
                                         src={produto.imagem}
@@ -88,14 +88,14 @@ export const CheckoutButton: FC = () => {
                                )
                           })}
                          
-                         {produtos.length == 0 && (
+                         {produtos?.length == 0 && (
                             <StackItem>
                                 <Heading fontSize="12px">
                                     Não há nenhum item no seu carrinho
                                 </Heading>
                             </StackItem>
                          )}
-                    </Stack>
+                    </HStack>
                 </PopoverBody>
 
                 <PopoverFooter>

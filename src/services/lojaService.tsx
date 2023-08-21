@@ -6,7 +6,10 @@ export interface Loja {
     nome: string
     nota: number
     categoria: string
-      
+    tempo: string
+    distancia: string
+    pedidoMinimo: number
+    taxaEntrega: number
     imageLogo: string
     imageCover: string
 }
@@ -17,7 +20,7 @@ export const listarLojas = () => {
         id: '1',
         nome: 'Pic Nic artigos de festa',
         nota: 5.0,
-        categoria: 'artigo de festa',          
+        categoria: 'Artigos de festa',          
         imageLogo: '/picnic.png',
         imageCover: 'https://picsum.photos/1200/250',
         },
@@ -25,15 +28,15 @@ export const listarLojas = () => {
         id: '2',
         nome: 'Tutto Dolce',
         nota: 5.0,
-        categoria: 'doce', 
+        categoria: 'Doces Italianos', 
         imageLogo: '/tutto.png',
         imageCover: 'https://picsum.photos/1200/250',
         },
         {
         id: '3',
-        nome: 'Cookie ',
+        nome: 'Cubic Cut ',
         nota: 4.7,
-        categoria: 'cookie ',
+        categoria: 'Cookies diversos ',
         imageLogo: '/cookie.png',
         imageCover: 'https://picsum.photos/1200/250',
         },
@@ -41,10 +44,26 @@ export const listarLojas = () => {
         id: '4',
         nome: 'Fare la Festa',
         nota: 4.9,
-        categoria: 'doces personalizados',
-        imageLogo: '/fare.png',
+        categoria: 'Doces gourmet',
+        imageLogo: '/doces.png',
         imageCover: 'https://picsum.photos/1200/250',
         },
+        {
+            id: '5',
+            nome: 'Amore Mio',
+            nota: 5,
+            categoria: 'Doces Personalizados',
+            imageLogo: '/fare.png',
+            imageCover: 'https://picsum.photos/1200/250',
+            },
+            {
+                id: '6',
+                nome: 'Cake & Cia',
+                nota: 4.2,
+                categoria: 'Bolos e Doces caseiros',
+                imageLogo: '/confete.webp',
+                imageCover: 'https://picsum.photos/1200/250',
+                },
         ]
         
         

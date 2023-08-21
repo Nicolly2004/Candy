@@ -54,6 +54,7 @@ export default function Cadastro() {
         resolver: yupResolver(validaCadastro),
     })
 
+
     const cadastraUsuario = async (dados: FormularioCadastro) => {
         await new Promise((resolver) =>{
             setTimeout(() => resolver(dados), 3*1000)
@@ -64,7 +65,7 @@ export default function Cadastro() {
             <Flex
             as="main"
            backgroundImage="/fundotextura.jpg"
-            color="black"
+            color="purple"
             minW="40vw"
             textAlign="center"
             padding={6}
@@ -102,6 +103,7 @@ export default function Cadastro() {
         error={errors.email}
         />
 
+      
         <Input
         label="Senha"
         id="senha"
@@ -110,8 +112,7 @@ export default function Cadastro() {
         {...register('senha')}
         error={errors.senha}  
         />
-    
-
+         
         <Input
         label="Confirme sua senha"
         id="conforme-senha"
@@ -133,11 +134,11 @@ export default function Cadastro() {
         </Button>
         </Flex>
 
-        <Flex as="footer" borderTop="1px solid rgba(165, 42, 42, 1)" mt={4} pt={4}  align="center" justify="center"  fontFamily="sans-serif">
+        <Flex as="footer" borderTop="2px solid rgba(165, 42, 42, 1)" mt={4} pt={4}  align="center" justify="center"  >
             <Text 
             >
             Já possui uma conta com a gente? {' '}
-            <Link href="/login" fontWeight={600} color="purple.700" fontFamily="sans-serif">
+            <Link href="/login" fontWeight={600} color="purple.400" fontFamily="sans-serif">
                 Acesse-a
             </Link>
             </Text>

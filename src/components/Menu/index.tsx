@@ -25,24 +25,22 @@ export const Menu: FC<MenuProps> = ({isOpen}) => {
 
 
   <StackItem>
-    <Link href="/">Chocolates</Link>
+    <Link href="/" color="pink.700">Chocolates</Link>
   </StackItem>
 
   <StackItem>
-    <Link href="/">Artigos de Festa</Link>
+    <Link href="/" color="pink.700">Artigos de Festa</Link>
   </StackItem>
 
 <StackItem>
-  <Link href="/">Encomendas</Link>
+  <Link href="/" color="pink.700">Encomendas</Link>
 </StackItem>
 
 <StackItem>
-  <Link href="/">Contatos </Link>
+  <Link href="/" color="pink.700">Contatos </Link>
 </StackItem>
 
-  <StackItem>
-    <Link href="/">Nr_Candy</Link>
-  </StackItem>
+  
 
 </Stack>
 

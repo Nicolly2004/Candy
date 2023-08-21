@@ -20,11 +20,11 @@ export default function Page() {
     <Flex direction="column" align="center" grow={1} bg="pink.50">
         <Flex as="hgroup" direction="column" align="center">
 
-           <Heading as="h1" fontSize="2rem">
+           <Heading as="h1" fontSize="2rem" color="pink.800">
                 Compras faceis em apenas alguns cliques
            </Heading>
 
-           <Heading as="h2" fontSize="1rem" color="pink.700">
+           <Heading as="h2" fontSize="1rem" color="blue.200">
                 Tudo com preços acessíveis!!!
            </Heading>
         </Flex>
@@ -41,7 +41,7 @@ export default function Page() {
     >
       
         <InputGroup>
-        <InputLeftAddon bg='purple.200' border="2px solid white">
+        <InputLeftAddon bg='purple.200' border="2px solid purple.200">
             <Icon as={GoSearch}/>
         </InputLeftAddon>
 
@@ -54,7 +54,7 @@ export default function Page() {
         />
         </InputGroup>
 
-        <Button colorScheme="pink.700" borderRadius="none">
+        <Button color="pink.800"  bg="blue.200" borderRadius="10px">
             Buscar Produto
         </Button>
         </FormControl>
@@ -63,7 +63,7 @@ export default function Page() {
 
      <Flex as="section" mt={10} gap={4}>
         <CardDestaque 
-        src="/Choc brando em gotas 1k.webp"
+        src="/goma.jpeg"
         path="/"
         titulo="Chocolates"
         color="blue"
@@ -73,7 +73,7 @@ export default function Page() {
         <CardDestaque
         src="/Festa.png"
         path="/"
-        titulo="Artidos de Festa"
+        titulo="Artigos de Festa"
         color="purple"
         />
      </Flex>
@@ -86,7 +86,7 @@ export default function Page() {
    mt={10}
    >
 
-  <Heading fontSize="2rem">Lojas</Heading>
+  <Heading fontSize="2rem" color="pink.800">Lojas</Heading>
 
 
   <Flex  gap={8} mt={2} wrap="wrap" align="center">
